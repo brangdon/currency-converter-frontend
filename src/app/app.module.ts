@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CurrencyFormComponent } from './currency-form/currency-form.component';
+import {CurrencyService} from './currency.service'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurrencyFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

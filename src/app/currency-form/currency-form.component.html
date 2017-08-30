@@ -1,0 +1,29 @@
+
+
+<div class='currency-converter'>
+	<form (submit)="convertAction()">
+		
+		<label for="">Currency I have</label>
+		<select class="form-control" [(ngModel)]="selectedCurrencyFrom" [ngModelOptions]="{standalone: true}">
+			<option *ngFor="let c of currencies" [ngValue]="c" >{{c.name}}</option>
+		</select>
+
+		<label for="">Currency I want</label>
+		<select class="form-control" [(ngModel)]="selectedCurrencyTo" [ngModelOptions]="{standalone: true}">
+			<option *ngFor="let c of currencies" [ngValue]="c" >{{c.name}}</option>
+		</select>
+
+		<label>Amount</label>
+		<input class="form-control" type="text" [(ngModel)]='amountFromValue' [ngModelOptions]="{standalone: true}"/>
+
+
+		<br/>
+		<button class="btn btn-default" type="submit">Convert</button>
+		
+	</form>
+
+	<br/>
+	<br/>
+	<p>Amount received: {{currencyResult}} {{selectedCurrencyTo.symbol}}</p>
+	<p>Rate: {{rate}}</p>
+</div>
